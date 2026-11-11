@@ -239,11 +239,11 @@ th.last, td.last { width: 15ch; }
   .page:has(> .side) { grid-template-columns: minmax(0, 1fr) 280px; }
   .tabs { grid-column: 1 / -1; }
   .side { grid-column: 2; grid-row: 2; }
-  /* Forum index: threads fill the main column, the profile and who's online stack in the sidebar */
-  .page:has(> .threads) { grid-template-columns: minmax(0, 1fr) 300px; grid-template-rows: auto auto 1fr; }
-  .threads { grid-column: 1; grid-row: 2 / span 2; }
-  .page:has(> .threads) .me { grid-column: 2; grid-row: 2; }
-  .page:has(> .threads) .side { grid-row: 3; }
+  /* Forum index: the profile and who's online stack in a left sidebar, threads fill the main column */
+  .page:has(> .threads) { grid-template-columns: 300px minmax(0, 1fr); grid-template-rows: auto auto 1fr; }
+  .threads { grid-column: 2; grid-row: 2 / span 2; }
+  .page:has(> .threads) .me { grid-column: 1; grid-row: 2; }
+  .page:has(> .threads) .side { grid-column: 1; grid-row: 3; }
   .me .profile { grid-template-columns: 1fr; justify-items: center; gap: 12px; }
   .me .postbit { width: 100%; padding: 0 0 12px; border-right: 0; border-bottom: 1px solid var(--line); }
 }
