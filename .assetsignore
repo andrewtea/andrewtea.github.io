@@ -1,0 +1,8 @@
+.git
+.amp
+.wrangler
+node_modules
+worker
+wrangler.jsonc
+CNAME
+.gitignore

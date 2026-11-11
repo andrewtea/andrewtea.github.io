@@ -4,7 +4,6 @@
 import { DurableObject } from "cloudflare:workers";
 
 const WINDOW_MS = 2 * 60 * 1000;
-const SITE = "https://andrewtea.dev";
 
 export class Presence extends DurableObject {
   constructor(ctx, env) {
@@ -30,8 +29,6 @@ export default {
       return new Response("not found", { status: 404 });
     }
     const guests = await env.PRESENCE.getByName("site").ping(id, url.searchParams.has("leave"));
-    return Response.json({ guests }, {
-      headers: { "access-control-allow-origin": SITE, "cache-control": "no-store" },
-    });
+    return Response.json({ guests }, { headers: { "cache-control": "no-store" } });
   },
 };
