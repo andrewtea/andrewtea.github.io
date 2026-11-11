@@ -60,6 +60,28 @@ a:focus-visible { outline: 1px dotted currentColor; outline-offset: 3px; }
 .row + .row { margin-top: 8px; }
 .label { color: var(--muted); font-size: 12px; text-align: right; }
 
+/* Postbit: the forum user column with a framed avatar, user title, and rank pips */
+.profile { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 1.25em; }
+.postbit { display: grid; justify-items: center; gap: 5px; padding-right: 1.25em; border-right: 1px solid var(--line); }
+.avatar {
+  display: block;
+  width: 80px; height: 80px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(60 56 40 / 15%);
+}
+.usertitle { color: var(--theme-ink); font-size: 12px; font-weight: 700; line-height: 1; text-shadow: 0 1px 0 #fff; }
+.pips { display: flex; gap: 2px; }
+.pips span {
+  width: 8px; height: 8px;
+  border: 1px solid #5f9a4e;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #e6ffd9 0%, #a8dc8f 45%, #78bb5f 50%, #8fcb76 100%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 70%);
+}
+
 /* Shared gel button */
 .gel {
   display: inline-flex;
@@ -167,8 +189,6 @@ th {
 th.num, td.num { text-align: right; width: 9ch; }
 td { padding: 10px .75em; color: var(--muted); }
 tr:nth-child(even) td { background: #f5f4ee; }
-
-.footer { font-size: 11px; color: var(--muted); text-align: right; }
 
 @media (max-width: 480px) {
   .page { padding: 16px; }
