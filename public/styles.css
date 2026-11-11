@@ -61,12 +61,12 @@ a:focus-visible { outline: 1px dotted currentColor; outline-offset: 3px; }
 .row + .row { margin-top: 8px; }
 .label { color: var(--muted); font-size: 12px; text-align: right; }
 
-/* Postbit: the forum user column with a framed avatar, user title, and rank pips */
+/* Postbit: the forum user column with a framed avatar, username, and pixel-art star rank */
 .profile { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 1.25em; }
 .postbit { display: grid; justify-items: center; gap: 5px; padding-right: 1.25em; border-right: 1px solid var(--line); }
 .avatar {
   display: block;
-  width: 80px; height: 80px;
+  width: 96px; height: 96px;
   padding: 3px;
   border: 1px solid var(--line);
   border-radius: 4px;
@@ -74,14 +74,7 @@ a:focus-visible { outline: 1px dotted currentColor; outline-offset: 3px; }
   box-shadow: 0 1px 2px rgb(60 56 40 / 15%);
 }
 .usertitle { color: var(--theme-ink); font-size: 12px; font-weight: 700; line-height: 1; text-shadow: 0 1px 0 #fff; }
-.pips { display: flex; gap: 2px; }
-.pips span {
-  width: 8px; height: 8px;
-  border: 1px solid #5f9a4e;
-  border-radius: 2px;
-  background: linear-gradient(180deg, #e6ffd9 0%, #a8dc8f 45%, #78bb5f 50%, #8fcb76 100%);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 70%);
-}
+.rank { display: block; margin-top: 5px; image-rendering: pixelated; }
 
 /* Shared gel button */
 .gel {
@@ -255,9 +248,9 @@ th.last, td.last { width: 15ch; }
   .page { padding: 16px; }
   .row { grid-template-columns: 1fr; gap: 2px; }
   .thread { grid-template-columns: 1fr; }
-  .thread .postbit { grid-template-columns: auto auto; grid-template-areas: "avatar title" "avatar pips"; justify-content: start; justify-items: start; column-gap: 10px; padding: 0 0 12px; border-right: 0; border-bottom: 1px solid var(--line); }
-  .thread .avatar { grid-area: avatar; width: 48px; height: 48px; padding: 2px; }
+  .thread .postbit { grid-template-columns: auto auto; grid-template-areas: "avatar title" "avatar rank"; justify-content: start; justify-items: start; column-gap: 10px; padding: 0 0 12px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .thread .avatar { grid-area: avatar; width: 56px; height: 56px; padding: 2px; }
   .thread .usertitle { grid-area: title; align-self: end; }
-  .thread .pips { grid-area: pips; align-self: start; }
+  .thread .rank { grid-area: rank; align-self: start; }
   .label { text-align: left; }
 }
