@@ -8,8 +8,7 @@ import { postDate } from "../format";
 const posts = (await getCollection("writing")).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 <Forum title="andrew" description="andrew — building voluma, prev epic.">
-  <section class="panel threads">
-    <div class="bar"><h2>writing</h2><small>{posts.length} {posts.length === 1 ? "post" : "posts"}</small></div>
+  <section class="panel threads" aria-label="writing">
     <table>
       <thead><tr><th>thread</th><th class="last">last post</th></tr></thead>
       <tbody>
