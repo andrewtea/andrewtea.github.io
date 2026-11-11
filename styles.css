@@ -11,6 +11,7 @@
   --theme-floor: #cfe7bd;
   --theme-ink: #233a1a;
   --gel-epic: linear-gradient(180deg, #fff8fa 0%, #f9e4ea 44%, #edc8d3 49%, #f2d7df 100%);
+  --gel-intel: linear-gradient(180deg, #f6fbff 0%, #e2f0fb 44%, #c3def3 49%, #d4e8f7 100%);
   --hilite: inset 0 1px 0 rgb(255 255 255 / 95%);
 }
 
@@ -107,12 +108,15 @@ a:focus-visible { outline: 1px dotted currentColor; outline-offset: 3px; }
 .company img { display: block; height: .8em; width: auto; }
 .company.epic { border-color: #cc8a9c; background: var(--gel-epic); box-shadow: var(--hilite), inset 0 -1px 0 rgb(147 35 65 / 8%), 0 1px 2px rgb(70 32 38 / 12%); }
 .company.voluma { border-color: #aaa3c8; background: var(--gel-voluma); box-shadow: var(--hilite), inset 0 -1px 0 rgb(67 49 113 / 8%), 0 1px 2px rgb(44 36 70 / 12%); }
+.company.intel { border-color: #8db6d6; background: var(--gel-intel); box-shadow: var(--hilite), inset 0 -1px 0 rgb(0 72 128 / 8%), 0 1px 2px rgb(20 44 70 / 12%); }
+.company.intel:active { background: linear-gradient(180deg, #bcd8ee, #d4e8f7); box-shadow: inset 0 1px 2px rgb(0 72 128 / 20%); }
 .company.epic:active { background: linear-gradient(180deg, #eac2cd, #f2d7df); box-shadow: inset 0 1px 2px rgb(100 30 49 / 20%); }
 .company.voluma:active { background: linear-gradient(180deg, #d3c7e7, #e5def4); box-shadow: inset 0 1px 2px rgb(67 49 113 / 20%); }
 
 @media (hover: hover) {
   .gel:hover { background: var(--gel-neutral-hover); border-color: #9b9888; }
   .company.epic:hover { background: linear-gradient(180deg, #fff5f8 0%, #f8dce5 44%, #eab6c6 49%, #efcbd6 100%); border-color: #ba627c; }
+  .company.intel:hover { background: linear-gradient(180deg, #f3f9ff 0%, #d9ebf9 44%, #b3d4ef 49%, #c8e1f4 100%); border-color: #6c9cc2; }
   .company.voluma:hover { background: linear-gradient(180deg, #faf7ff 0%, #e9e0f9 44%, #cfc0e9 49%, #ddd1f0 100%); border-color: #8b7cae; }
 }
 
