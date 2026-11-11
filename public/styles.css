@@ -154,9 +154,20 @@ a:focus-visible { outline: 1px dotted currentColor; outline-offset: 3px; }
   top: 1px;
   height: 2.2em;
   border-color: var(--theme-line);
-  background: var(--gel-theme);
+  /* The tab is a fractional number of pixels tall, so a repeating gradient leaks a sliver of
+     its light top color along the bottom edge in WebKit; don't repeat, and fill with the floor. */
+  background: var(--gel-theme) no-repeat var(--theme-floor);
   color: var(--theme-ink);
   font-weight: 700;
+}
+/* Cover the floor's top border under the tab with overlap instead of an exact 1px nudge,
+   which rounds differently from the floor at some zoom levels and leaves a green line. */
+.tab[aria-current]::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -3px;
+  height: 5px;
+  background: var(--theme-floor);
 }
 @media (hover: hover) {
   .tab:not([aria-current]):hover { background: var(--gel-neutral-hover); border-color: #9b9888; color: var(--ink); }
