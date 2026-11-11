@@ -1,0 +1,32 @@
+---
+// The forum shell every page shares: head, the tab strip, and the who's online script.
+interface Props {
+  title: string;
+  description: string;
+  tab?: "home" | "writing";
+}
+const { title, description, tab } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f2f1eb">
+    <meta name="description" content={description}>
+    <title>{title}</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <nav class="tabs" aria-label="site">
+        <a class="tab" href="/" aria-current={tab === "home" ? "page" : undefined}>home</a>
+        <a class="tab" href="/writing/" aria-current={tab === "writing" ? "page" : undefined}>writing</a>
+        <a class="tab" href="https://github.com/andrewtea">github ↗</a>
+      </nav>
+
+      <slot />
+    </main>
+    <script is:inline src="/online.js" data-api="/online" defer></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "andrewtea-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "wrangler dev"
+  },
+  "devDependencies": {
+    "astro": "^7.4.11",
+    "wrangler": "^4.160.1"
+  }
+}

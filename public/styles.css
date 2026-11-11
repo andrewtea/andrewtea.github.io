@@ -198,6 +198,29 @@ th {
 th.num, td.num { text-align: right; width: 9ch; }
 td { padding: 10px .75em; color: var(--muted); }
 tr:nth-child(even) td { background: #f5f4ee; }
+.title { color: var(--theme-ink); font-weight: 700; text-decoration: none; }
+.title:hover { text-decoration: underline; }
+.by { display: block; font-size: 11px; color: var(--muted); }
+
+/* A post, shown as a thread's opening post: the postbit beside the post body */
+.thread { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; gap: 1.25em; }
+.thread .postbit { padding-bottom: 4px; }
+.post { max-width: 72ch; }
+.post > :first-child { margin-top: 0; }
+.post h2, .post h3 { margin: 1.4em 0 .4em; font: inherit; font-weight: 700; color: var(--theme-ink); }
+.post p, .post ul, .post ol, .post blockquote, .post pre { margin: 0 0 1em; }
+.post a { color: var(--theme-ink); }
+.post blockquote {
+  padding: 6px .75em;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--theme-line);
+  border-radius: 3px;
+  background: #f5f4ee;
+  color: var(--muted);
+}
+.post code { font: inherit; font-size: 13px; background: #efeee6; padding: 0 .3ch; border-radius: 2px; }
+.post pre { padding: 8px .75em; overflow-x: auto; border: 1px solid var(--line); border-radius: 3px; background: #f5f4ee; }
+.post pre code { padding: 0; background: none; }
 
 /* Desktop: span the window like a full-width forum, with who's online as a sidebar */
 @media (min-width: 900px) {
@@ -217,5 +240,10 @@ tr:nth-child(even) td { background: #f5f4ee; }
 @media (max-width: 480px) {
   .page { padding: 16px; }
   .row { grid-template-columns: 1fr; gap: 2px; }
+  .thread { grid-template-columns: 1fr; }
+  .thread .postbit { grid-template-columns: auto auto; grid-template-areas: "avatar title" "avatar pips"; justify-content: start; justify-items: start; column-gap: 10px; padding: 0 0 12px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .thread .avatar { grid-area: avatar; width: 48px; height: 48px; padding: 2px; }
+  .thread .usertitle { grid-area: title; align-self: end; }
+  .thread .pips { grid-area: pips; align-self: start; }
   .label { text-align: left; }
 }

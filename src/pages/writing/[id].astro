@@ -1,0 +1,23 @@
+---
+// A post, shown as the opening post of a forum thread.
+import { getCollection, render } from "astro:content";
+import Forum from "../../layouts/Forum.astro";
+import Postbit from "../../components/Postbit.astro";
+import { postDate } from "../../format";
+
+export async function getStaticPaths() {
+  return (await getCollection("writing")).map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+<Forum title={`${post.data.title} — andrew`} description={post.data.title} tab="writing">
+  <article class="panel">
+    <div class="bar"><h1>{post.data.title}</h1><small><time datetime={post.data.date.toISOString().slice(0, 10)}>{postDate(post.data.date)}</time></small></div>
+    <div class="body thread">
+      <Postbit />
+      <div class="post"><Content /></div>
+    </div>
+  </article>
+</Forum>

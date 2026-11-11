@@ -1,0 +1,31 @@
+---
+import Forum from "../layouts/Forum.astro";
+import Postbit from "../components/Postbit.astro";
+---
+<Forum title="andrew" description="andrew — building voluma, prev epic." tab="home">
+  <section class="panel">
+    <div class="bar"><h1>andrew</h1></div>
+    <div class="body profile">
+      <Postbit />
+      <div>
+        <div class="row">
+          <span class="label">building</span>
+          <span><a class="gel company voluma" href="https://voluma.bio/" aria-label="voluma"><img src="/assets/voluma-wordmark.png" alt="" width="320" height="53"></a></span>
+        </div>
+        <div class="row">
+          <span class="label">prev</span>
+          <span><a class="gel company epic" href="https://www.epic.com/" aria-label="epic"><img src="/assets/epic-wordmark.png" alt="" width="106" height="41"></a>
+            <a class="gel company intel" href="https://www.intel.com/" aria-label="intel"><img src="/assets/intel-wordmark.png" alt="" width="206" height="80"></a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel side">
+    <div class="bar"><h2>who's online</h2></div>
+    <div class="body online">
+      <p id="online-count" aria-live="polite">1 member online</p>
+      <p class="members"><span class="status admin" title="administrator">andrew</span></p>
+    </div>
+  </section>
+</Forum>
