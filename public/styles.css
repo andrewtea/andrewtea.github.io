@@ -198,6 +198,9 @@ th {
 th.num, td.num { text-align: right; width: 9ch; }
 td { padding: 10px .75em; color: var(--muted); }
 tr:nth-child(even) td { background: #f5f4ee; }
+td + td { border-left: 1px solid #ebe9e1; }
+tbody tr + tr td { border-top: 1px solid #ebe9e1; }
+th.last, td.last { width: 15ch; }
 .title { color: var(--theme-ink); font-weight: 700; text-decoration: none; }
 .title:hover { text-decoration: underline; }
 .by { display: block; font-size: 11px; color: var(--muted); }
@@ -235,6 +238,17 @@ tr:nth-child(even) td { background: #f5f4ee; }
   .page:has(> .side) { grid-template-columns: minmax(0, 1fr) 280px; }
   .tabs { grid-column: 1 / -1; }
   .side { grid-column: 2; grid-row: 2; }
+  /* Forum index: threads fill the main column, the profile and who's online stack in the sidebar */
+  .page:has(> .threads) { grid-template-columns: minmax(0, 1fr) 300px; grid-template-rows: auto auto 1fr; }
+  .threads { grid-column: 1; grid-row: 2 / span 2; }
+  .page:has(> .threads) .me { grid-column: 2; grid-row: 2; }
+  .page:has(> .threads) .side { grid-row: 3; }
+  .me .profile { grid-template-columns: 1fr; justify-items: center; gap: 12px; }
+  .me .postbit { width: 100%; padding: 0 0 12px; border-right: 0; border-bottom: 1px solid var(--line); }
+}
+
+@media (max-width: 640px) {
+  .last { display: none; }
 }
 
 @media (max-width: 480px) {
