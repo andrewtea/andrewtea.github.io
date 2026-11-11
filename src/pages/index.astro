@@ -11,13 +11,12 @@ const posts = (await getCollection("writing")).sort((a, b) => b.data.date.getTim
   <section class="panel threads">
     <div class="bar"><h2>writing</h2><small>{posts.length} {posts.length === 1 ? "post" : "posts"}</small></div>
     <table>
-      <thead><tr><th>thread</th><th class="num">replies</th><th class="last">last post</th></tr></thead>
+      <thead><tr><th>thread</th><th class="last">last post</th></tr></thead>
       <tbody>
-        {posts.length === 0 && <tr><td>nothing here yet.</td><td class="num">—</td><td class="last">—</td></tr>}
+        {posts.length === 0 && <tr><td>nothing here yet.</td><td class="last">—</td></tr>}
         {posts.map((post) => (
           <tr>
             <td><a class="title" href={`/writing/${post.id}/`}>{post.data.title}</a><span class="by">started by andrew</span></td>
-            <td class="num">—</td>
             <td class="last">{postDate(post.data.date)}<span class="by">by andrew</span></td>
           </tr>
         ))}

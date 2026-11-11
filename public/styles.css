@@ -195,7 +195,6 @@ th {
   text-align: left;
   text-shadow: 0 1px 0 #fff;
 }
-th.num, td.num { text-align: right; width: 9ch; }
 td { padding: 10px .75em; color: var(--muted); }
 tr:nth-child(even) td { background: #f5f4ee; }
 td + td { border-left: 1px solid #ebe9e1; }
