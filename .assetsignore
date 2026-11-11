@@ -4,5 +4,4 @@
 node_modules
 worker
 wrangler.jsonc
-CNAME
 .gitignore
