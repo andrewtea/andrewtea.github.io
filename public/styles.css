@@ -22,7 +22,7 @@ html {
     #f2f1eb;
   color: var(--ink);
 }
-body { margin: 0; font: 400 14px/1.65 'Courier New', Courier, monospace; }
+body { margin: 0; font: 400 13px/1.65 ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
 h1, h2, p { font: inherit; letter-spacing: 0; margin: 0; }
 a { color: inherit; }
 a:focus-visible { outline: 1px dotted currentColor; outline-offset: 3px; }
@@ -52,7 +52,7 @@ a:focus-visible { outline: 1px dotted currentColor; outline-offset: 3px; }
   text-shadow: 0 1px 0 rgb(255 255 255 / 80%);
 }
 .bar h1, .bar h2 { font-weight: 700; }
-.bar small { color: #5b7a4b; font-size: 12px; }
+.bar small { color: #5b7a4b; font-size: 12px; white-space: nowrap; }
 .body { padding: 12px .75em; }
 
 
