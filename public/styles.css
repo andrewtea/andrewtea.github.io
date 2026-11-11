@@ -224,6 +224,7 @@ th.last, td.last { width: 15ch; }
 .post code { font: inherit; font-size: 13px; background: #efeee6; padding: 0 .3ch; border-radius: 2px; }
 .post pre { padding: 8px .75em; overflow-x: auto; border: 1px solid var(--line); border-radius: 3px; background: #f5f4ee; }
 .post pre code { padding: 0; background: none; }
+.threadnav { font-size: 12px; }
 
 /* Desktop: span the window like a full-width forum, with who's online as a sidebar */
 @media (min-width: 900px) {
