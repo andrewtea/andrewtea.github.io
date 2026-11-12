@@ -84,10 +84,10 @@ a.usertitle { text-decoration: none; }
 /* The member profile's "about me" line, above its detail rows */
 .aboutme { margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px dotted var(--line); }
 .member .profile { align-items: start; }
-/* A friend's name in the bio: a plain link led by the favicon of the site it opens, as Web 2.0 blogs marked outbound links */
-.person { color: var(--theme-ink); font-weight: 700; white-space: nowrap; text-decoration: underline dotted; text-underline-offset: 3px; }
+/* A friend's name in the bio, and the profile's detail links: plain links, the friend's led by the favicon of the site it opens, as Web 2.0 blogs marked outbound links */
+.person, .member .row a { color: var(--theme-ink); font-weight: 700; white-space: nowrap; text-decoration: underline dotted; text-underline-offset: 3px; }
 .person img { width: 14px; height: 14px; margin-right: .5ch; vertical-align: -2px; }
-@media (hover: hover) { .person:hover { text-decoration-style: solid; } }
+@media (hover: hover) { .person:hover, .member .row a:hover { text-decoration-style: solid; } }
 /* Contact icons under the name, like the AIM/MSN/ICQ buttons in a vBulletin postbit */
 .contact { display: flex; gap: 4px; margin-top: 5px; }
 .contact .gel { width: 26px; height: 22px; padding: 0; }
