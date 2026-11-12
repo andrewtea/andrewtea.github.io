@@ -61,7 +61,7 @@ a:focus-visible { outline: 1px dotted currentColor; outline-offset: 3px; }
 .row + .row { margin-top: 8px; }
 .label { color: var(--muted); font-size: 12px; text-align: right; }
 
-/* Postbit: the forum user column with a framed avatar, username, and pixel-art star rank */
+/* Postbit: the forum user column with a framed avatar, username, and contact icons */
 .profile { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 1.25em; }
 .postbit { display: grid; justify-items: center; gap: 5px; padding-right: 1.25em; border-right: 1px solid var(--line); }
 .avatar {
@@ -74,9 +74,8 @@ a:focus-visible { outline: 1px dotted currentColor; outline-offset: 3px; }
   box-shadow: 0 1px 2px rgb(60 56 40 / 15%);
 }
 .usertitle { color: var(--theme-ink); font-size: 14px; font-weight: 700; line-height: 1; text-shadow: 0 1px 0 #fff; }
-.rank { display: block; margin-top: 5px; image-rendering: pixelated; }
-/* Contact icons under the rank, like the AIM/MSN/ICQ buttons in a vBulletin postbit */
-.contact { display: flex; gap: 4px; margin-top: 4px; }
+/* Contact icons under the name, like the AIM/MSN/ICQ buttons in a vBulletin postbit */
+.contact { display: flex; gap: 4px; margin-top: 5px; }
 .contact .gel { width: 26px; height: 22px; padding: 0; }
 .contact img { display: block; }
 
@@ -239,10 +238,9 @@ th.last, td.last { width: 15ch; }
   .page { padding: 16px; }
   .row { grid-template-columns: 1fr; gap: 2px; }
   .thread { grid-template-columns: 1fr; }
-  .thread .postbit { grid-template-columns: auto auto; grid-template-areas: "avatar title" "avatar rank" "avatar contact"; justify-content: start; justify-items: start; column-gap: 10px; padding: 0 0 12px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .thread .postbit { grid-template-columns: auto auto; grid-template-areas: "avatar title" "avatar contact"; justify-content: start; justify-items: start; column-gap: 10px; padding: 0 0 12px; border-right: 0; border-bottom: 1px solid var(--line); }
   .thread .avatar { grid-area: avatar; width: 64px; height: 64px; padding: 2px; }
   .thread .usertitle { grid-area: title; align-self: end; }
-  .thread .rank { grid-area: rank; align-self: start; }
-  .thread .contact { grid-area: contact; margin-top: 0; }
+  .thread .contact { grid-area: contact; align-self: start; }
   .label { text-align: left; }
 }
