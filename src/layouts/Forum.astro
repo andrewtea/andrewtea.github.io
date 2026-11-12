@@ -3,8 +3,10 @@
 interface Props {
   title: string;
   description: string;
+  /** The nav tab shown pressed in; posts belong to the forum. */
+  current?: "forum" | "about";
 }
-const { title, description } = Astro.props;
+const { title, description, current = "forum" } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -19,7 +21,8 @@ const { title, description } = Astro.props;
   <body>
     <main class="page">
       <nav class="navbar" aria-label="site">
-        <a href="/" aria-current="page"><img src="/assets/icons/forum.svg" alt="" width="16" height="16">forum</a>
+        <a href="/" aria-current={current === "forum" ? "page" : undefined}><img src="/assets/icons/forum.svg" alt="" width="16" height="16">forum</a>
+        <a href="/about/" aria-current={current === "about" ? "page" : undefined}><img src="/assets/icons/about.svg" alt="" width="16" height="16">about</a>
       </nav>
 
       <slot />

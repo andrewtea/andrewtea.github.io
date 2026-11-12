@@ -1,0 +1,32 @@
+---
+// Andrew's member profile, as a forum's member page: the postbit beside his bio and details.
+import Forum from "../layouts/Forum.astro";
+import Postbit from "../components/Postbit.astro";
+
+const JIMMY_LINKEDIN = "https://www.linkedin.com/in/jimmy-yao/";
+---
+<Forum title="about — andrew" description="about andrew — software engineer, building voluma, prev epic and intel." current="about">
+  <section class="panel member">
+    <div class="bar"><h1>profile: andrew</h1></div>
+    <div class="body profile">
+      <Postbit />
+      <div>
+        <p class="aboutme">For the past 3 years, I was at Epic Systems building clinical AI for wound care nurses. I left Epic to build Voluma with my good friend <a class="gel person" href={JIMMY_LINKEDIN}><img src="/assets/icons/linkedin.svg" alt="" width="16" height="16">Jimmy</a>, where we’re accelerating preclinical efficacy studies for drug development.</p>
+        <div class="row">
+          <span class="label">location</span>
+          <span>san francisco, ca</span>
+        </div>
+        <div class="row">
+          <span class="label">building</span>
+          <span><a class="gel company voluma" href="https://voluma.bio/" aria-label="voluma"><img src="/assets/voluma-wordmark.png" alt="" width="320" height="53"></a></span>
+        </div>
+        <div class="row">
+          <span class="label">prev</span>
+          <span><a class="gel company epic" href="https://www.epic.com/" aria-label="epic"><img src="/assets/epic-wordmark.png" alt="" width="106" height="41"></a>
+            <a class="gel company intel" href="https://www.intel.com/" aria-label="intel"><img src="/assets/intel-wordmark.png" alt="" width="206" height="80"></a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <p class="threadnav"><a class="gel" href="/">« back to index</a></p>
+</Forum>

@@ -74,6 +74,19 @@ a:focus-visible { outline: 1px dotted currentColor; outline-offset: 3px; }
   box-shadow: 0 1px 2px rgb(60 56 40 / 15%);
 }
 .usertitle { color: var(--theme-ink); font-size: 14px; font-weight: 700; line-height: 1; text-shadow: 0 1px 0 #fff; }
+/* The avatar and name link to the member profile, like a username on a forum */
+.avatar-link { display: block; border-radius: 4px; }
+a.usertitle { text-decoration: none; }
+@media (hover: hover) {
+  .avatar-link:hover .avatar { border-color: var(--theme-line); box-shadow: 0 0 0 2px rgb(134 176 108 / 35%), 0 1px 2px rgb(60 56 40 / 15%); }
+  a.usertitle:hover { text-decoration: underline; }
+}
+/* The member profile's "about me" line, above its detail rows */
+.aboutme { margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px dotted var(--line); }
+.member .profile { align-items: start; }
+/* A friend's name in the bio as a small gel button with the site he links to */
+.gel.person { height: 1.6em; padding: 0 .45em; }
+.gel.person img { display: block; width: 14px; height: 14px; }
 /* Contact icons under the name, like the AIM/MSN/ICQ buttons in a vBulletin postbit */
 .contact { display: flex; gap: 4px; margin-top: 5px; }
 .contact .gel { width: 26px; height: 22px; padding: 0; }
@@ -236,6 +249,9 @@ th.last, td.last { width: 15ch; }
 
 @media (max-width: 640px) {
   .last { display: none; }
+  /* Member profile: the postbit stacks above the details instead of squeezing them */
+  .member .profile { grid-template-columns: 1fr; gap: 12px; }
+  .member .postbit { padding: 0 0 12px; border-right: 0; border-bottom: 1px solid var(--line); }
 }
 
 @media (max-width: 480px) {
@@ -243,7 +259,8 @@ th.last, td.last { width: 15ch; }
   .row { grid-template-columns: 1fr; gap: 2px; }
   .thread { grid-template-columns: 1fr; }
   .thread .postbit { grid-template-columns: auto auto; grid-template-areas: "avatar title" "avatar contact"; justify-content: start; justify-items: start; column-gap: 10px; padding: 0 0 12px; border-right: 0; border-bottom: 1px solid var(--line); }
-  .thread .avatar { grid-area: avatar; width: 64px; height: 64px; padding: 2px; }
+  .thread .postbit > :first-child { grid-area: avatar; }
+  .thread .avatar { width: 64px; height: 64px; padding: 2px; }
   .thread .usertitle { grid-area: title; align-self: end; }
   .thread .contact { grid-area: contact; align-self: start; }
   .label { text-align: left; }

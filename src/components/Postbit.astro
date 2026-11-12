@@ -1,10 +1,16 @@
 ---
 // Andrew's forum user column: framed avatar, username, and contact icons (left out where the page shows them elsewhere).
+// The avatar and name open his member profile at /about/, as a username does on a forum, except on that page itself.
 const { contact = true } = Astro.props;
+const link = Astro.url.pathname !== "/about/";
 ---
 <div class="postbit">
-  <img class="avatar" src="/assets/avatar.jpg" alt="andrew tang" width="120" height="120">
-  <div class="usertitle">andrew tang</div>
+  {link
+    ? <a class="avatar-link" href="/about/" tabindex="-1" aria-hidden="true"><img class="avatar" src="/assets/avatar.jpg" alt="" width="120" height="120"></a>
+    : <img class="avatar" src="/assets/avatar.jpg" alt="andrew tang" width="120" height="120">}
+  {link
+    ? <a class="usertitle" href="/about/" title="view andrew's profile">andrew tang</a>
+    : <div class="usertitle">andrew tang</div>}
   {contact && <div class="contact">
     <a class="gel" href="https://github.com/andrewtea" aria-label="github" title="github"><img src="/assets/icons/github.svg" alt="" width="16" height="16"></a>
     <a class="gel" href="https://x.com/andrewDotTea" aria-label="twitter" title="twitter"><img src="/assets/icons/twitter.svg" alt="" width="16" height="16"></a>

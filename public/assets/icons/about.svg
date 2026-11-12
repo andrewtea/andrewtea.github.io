@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- A member bust, Silk "user" style: green gel shirt under a neutral head -->
+  <defs>
+    <linearGradient id="head" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffdf7"/><stop offset="1" stop-color="#e3d6bf"/></linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6f5da"/><stop offset=".45" stop-color="#bfe2a6"/><stop offset=".5" stop-color="#9fd07f"/><stop offset="1" stop-color="#b6dc9b"/></linearGradient>
+  </defs>
+  <path d="M1.5 15.5v-1.8c0-2.6 2.4-4.2 6.5-4.2s6.5 1.6 6.5 4.2v1.8z" fill="url(#body)" stroke="#5f9a4e"/>
+  <circle cx="8" cy="5" r="3.5" fill="url(#head)" stroke="#8f8c7e"/>
+  <path d="M5.4 4.2a2.7 2.2 0 0 1 5.2 0q-2.6-.9-5.2 0z" fill="#fff" opacity=".8"/>
+</svg>
