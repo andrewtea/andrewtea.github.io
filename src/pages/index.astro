@@ -8,21 +8,6 @@ import { postDate } from "../format";
 const posts = (await getCollection("writing")).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 <Forum title="andrew" description="andrew — building voluma, prev epic.">
-  <section class="panel threads" aria-label="writing">
-    <table>
-      <thead><tr><th>thread</th><th class="last">last post</th></tr></thead>
-      <tbody>
-        {posts.length === 0 && <tr><td>nothing here yet.</td><td class="last">—</td></tr>}
-        {posts.map((post) => (
-          <tr>
-            <td><a class="title" href={`/writing/${post.id}/`}>{post.data.title}</a><span class="by">started by andrew</span></td>
-            <td class="last">{postDate(post.data.date)}<span class="by">by andrew</span></td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </section>
-
   <section class="panel me">
     <div class="bar"><h1>profile</h1></div>
     <div class="body profile">
@@ -39,6 +24,21 @@ const posts = (await getCollection("writing")).sort((a, b) => b.data.date.getTim
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="panel threads" aria-label="writing">
+    <table>
+      <thead><tr><th>thread</th><th class="last">last post</th></tr></thead>
+      <tbody>
+        {posts.length === 0 && <tr><td>nothing here yet.</td><td class="last">—</td></tr>}
+        {posts.map((post) => (
+          <tr>
+            <td><a class="title" href={`/writing/${post.id}/`}>{post.data.title}</a><span class="by">started by andrew</span></td>
+            <td class="last">{postDate(post.data.date)}<span class="by">by andrew</span></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   </section>
 
   <section class="panel side">
