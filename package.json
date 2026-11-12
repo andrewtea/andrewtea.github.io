@@ -8,6 +8,7 @@
     "preview": "wrangler dev"
   },
   "devDependencies": {
+    "@astrojs/markdown-satteri": "^0.4.9",
     "astro": "^7.4.11",
     "wrangler": "^4.160.1"
   }
