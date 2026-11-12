@@ -1,5 +1,5 @@
 ---
-// The forum shell every page shares: head, the tab strip, and the who's online script.
+// The forum shell every page shares: head, the nav bar, and the who's online script.
 interface Props {
   title: string;
   description: string;
@@ -18,9 +18,9 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <main class="page">
-      <nav class="tabs" aria-label="site">
-        <a class="tab" href="/" aria-current="page">forum</a>
-        <a class="tab" href="https://github.com/andrewtea">github ↗</a>
+      <nav class="navbar" aria-label="site">
+        <a href="/" aria-current="page">forum</a>
+        <a href="https://github.com/andrewtea">github ↗</a>
       </nav>
 
       <slot />

@@ -29,7 +29,7 @@ a:focus-visible { outline: 1px dotted currentColor; outline-offset: 3px; }
 
 .page { max-width: 640px; padding: 32px; }
 
-/* Panel: a forum "block" with a glossy title bar */
+/* Panel: a forum "block" with a neutral glossy title bar; green is kept for the nav and small accents */
 .panel {
   border: 1px solid var(--line);
   border-radius: 5px;
@@ -45,14 +45,14 @@ a:focus-visible { outline: 1px dotted currentColor; outline-offset: 3px; }
   gap: 1ch;
   min-height: 2.1em;
   padding: 0 .75em;
-  border-bottom: 1px solid var(--theme-line);
-  background: var(--gel-theme);
-  box-shadow: var(--hilite), inset 0 -1px 0 rgb(48 92 30 / 10%);
-  color: var(--theme-ink);
-  text-shadow: 0 1px 0 rgb(255 255 255 / 80%);
+  border-bottom: 1px solid var(--line);
+  background: var(--gel-neutral);
+  box-shadow: var(--hilite), inset 0 -1px 0 rgb(60 56 40 / 6%);
+  color: var(--ink);
+  text-shadow: 0 1px 0 #fff;
 }
 .bar h1, .bar h2 { font-weight: 700; }
-.bar small { color: #5b7a4b; font-size: 12px; white-space: nowrap; }
+.bar small { color: var(--muted); font-size: 12px; white-space: nowrap; }
 .body { padding: 12px .75em; }
 
 
@@ -113,64 +113,38 @@ a:focus-visible { outline: 1px dotted currentColor; outline-offset: 3px; }
   .company.voluma:hover { background: linear-gradient(180deg, #faf7ff 0%, #e9e0f9 44%, #cfc0e9 49%, #ddd1f0 100%); border-color: #8b7cae; }
 }
 
-/* Tab strip: glossy tabs sitting on a lavender floor, active tab joins the floor */
-.tabs {
-  position: relative;
+/* Nav bar: one full-width glossy green bar, like a vBulletin navbar, with the current page pressed in.
+   Gradients don't repeat over a solid fill, so a fractional bar height can't leak a light sliver. */
+.navbar {
   display: flex;
-  align-items: flex-end;
-  gap: 3px;
-  padding: 0 10px;
-  margin-bottom: 21px;
-}
-.tabs::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; top: 100%;
-  height: 7px;
+  height: 2.3em;
+  margin-bottom: 14px;
   border: 1px solid var(--theme-line);
-  border-radius: 0 0 4px 4px;
-  background: var(--theme-floor);
-  box-shadow: inset 0 -1px 0 rgb(48 92 30 / 10%), 0 1px 2px rgb(30 54 20 / 12%);
+  border-radius: 5px;
+  background: var(--gel-theme) no-repeat var(--theme-floor);
+  box-shadow: var(--hilite), inset 0 -1px 0 rgb(48 92 30 / 10%), 0 1px 2px rgb(30 54 20 / 12%);
+  overflow: hidden;
 }
-.tab {
-  position: relative;
-  display: inline-flex;
+.navbar a {
+  display: flex;
   align-items: center;
-  height: 1.9em;
-  padding: 0 .9em;
-  border: 1px solid #b4b1a3;
-  border-bottom: 0;
-  border-radius: 5px 5px 0 0;
-  background: var(--gel-neutral);
-  box-shadow: var(--hilite);
-  color: var(--muted);
-  line-height: 1;
+  padding: 0 1em;
+  border-right: 1px solid rgb(48 92 30 / 22%);
+  box-shadow: 1px 0 0 rgb(255 255 255 / 55%);
+  color: #44663a;
   text-decoration: none;
-  text-shadow: 0 1px 0 #fff;
+  text-shadow: 0 1px 0 rgb(255 255 255 / 80%);
   white-space: nowrap;
 }
-.tab[aria-current] {
-  z-index: 1;
-  top: 1px;
-  height: 2.2em;
-  border-color: var(--theme-line);
-  /* The tab is a fractional number of pixels tall, so a repeating gradient leaks a sliver of
-     its light top color along the bottom edge in WebKit; don't repeat, and fill with the floor. */
-  background: var(--gel-theme) no-repeat var(--theme-floor);
+.navbar a[aria-current] {
+  background: linear-gradient(180deg, #a9cf8e, #c3e1ad 60%, #cfe7bd) no-repeat var(--theme-floor);
+  box-shadow: inset 0 1px 3px rgb(48 92 30 / 35%), 1px 0 0 rgb(255 255 255 / 55%);
   color: var(--theme-ink);
   font-weight: 700;
-}
-/* Cover the floor's top border under the tab with overlap instead of an exact 1px nudge,
-   which rounds differently from the floor at some zoom levels and leaves a green line. */
-.tab[aria-current]::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: -3px;
-  height: 5px;
-  background: var(--theme-floor);
+  text-shadow: 0 1px 0 rgb(255 255 255 / 55%);
 }
 @media (hover: hover) {
-  .tab:not([aria-current]):hover { background: var(--gel-neutral-hover); border-color: #9b9888; color: var(--ink); }
+  .navbar a:not([aria-current]):hover { background: rgb(255 255 255 / 30%); color: var(--theme-ink); }
 }
 
 /* Status pill, like an "online" badge */
@@ -240,7 +214,7 @@ th.last, td.last { width: 15ch; }
     padding: 32px;
   }
   .page:has(> .side) { grid-template-columns: minmax(0, 1fr) 280px; }
-  .tabs { grid-column: 1 / -1; }
+  .navbar { grid-column: 1 / -1; }
   .side { grid-column: 2; grid-row: 2; }
   /* Forum index: the profile and who's online stack in a left sidebar, threads fill the main column */
   .page:has(> .threads) { grid-template-columns: 300px minmax(0, 1fr); grid-template-rows: auto auto 1fr; }
