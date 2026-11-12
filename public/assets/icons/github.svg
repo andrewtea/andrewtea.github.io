@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- A glossy black badge with a white cat head, after the GitHub mark -->
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b6b6b"/><stop offset=".5" stop-color="#3a3a3a"/><stop offset=".52" stop-color="#1f1f1f"/><stop offset="1" stop-color="#333"/></linearGradient>
+  </defs>
+  <circle cx="8" cy="8" r="7.5" fill="url(#g)" stroke="#111"/>
+  <path d="M4.9 3.6l1.8 1.6Q8 4.8 9.3 5.2l1.8-1.6q.6 1.6.3 2.9.8 1 .6 2.4-.4 2.3-4 2.4-3.6-.1-4-2.4-.2-1.4.6-2.4-.3-1.3.3-2.9z" fill="#fff"/>
+  <path d="M6.9 11h2.2v4.2H6.9z" fill="#fff"/>
+  <path d="M2 6.5a6 5 0 0 1 12 0q-6-2-12 0z" fill="#fff" opacity=".22"/>
+</svg>

@@ -75,6 +75,10 @@ a:focus-visible { outline: 1px dotted currentColor; outline-offset: 3px; }
 }
 .usertitle { color: var(--theme-ink); font-size: 14px; font-weight: 700; line-height: 1; text-shadow: 0 1px 0 #fff; }
 .rank { display: block; margin-top: 5px; image-rendering: pixelated; }
+/* Contact icons under the rank, like the AIM/MSN/ICQ buttons in a vBulletin postbit */
+.contact { display: flex; gap: 4px; margin-top: 4px; }
+.contact .gel { width: 26px; height: 22px; padding: 0; }
+.contact img { display: block; }
 
 /* Shared gel button */
 .gel {
@@ -143,6 +147,8 @@ a:focus-visible { outline: 1px dotted currentColor; outline-offset: 3px; }
   font-weight: 700;
   text-shadow: 0 1px 0 rgb(255 255 255 / 55%);
 }
+/* Small glossy icons beside the nav labels, like phpBB's prosilver header and famfamfam Silk */
+.navbar img { display: block; flex: none; margin-right: .6ch; filter: drop-shadow(0 1px 0 rgb(255 255 255 / 70%)); }
 @media (hover: hover) {
   .navbar a:not([aria-current]):hover { background: rgb(255 255 255 / 30%); color: var(--theme-ink); }
 }
@@ -233,9 +239,10 @@ th.last, td.last { width: 15ch; }
   .page { padding: 16px; }
   .row { grid-template-columns: 1fr; gap: 2px; }
   .thread { grid-template-columns: 1fr; }
-  .thread .postbit { grid-template-columns: auto auto; grid-template-areas: "avatar title" "avatar rank"; justify-content: start; justify-items: start; column-gap: 10px; padding: 0 0 12px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .thread .postbit { grid-template-columns: auto auto; grid-template-areas: "avatar title" "avatar rank" "avatar contact"; justify-content: start; justify-items: start; column-gap: 10px; padding: 0 0 12px; border-right: 0; border-bottom: 1px solid var(--line); }
   .thread .avatar { grid-area: avatar; width: 64px; height: 64px; padding: 2px; }
   .thread .usertitle { grid-area: title; align-self: end; }
   .thread .rank { grid-area: rank; align-self: start; }
+  .thread .contact { grid-area: contact; margin-top: 0; }
   .label { text-align: left; }
 }
