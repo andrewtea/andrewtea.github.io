@@ -9,9 +9,15 @@ const posts = (await getCollection("writing")).sort((a, b) => b.data.date.getTim
 ---
 <Forum title="andrew" description="andrew — building voluma, prev epic.">
   <section class="panel me">
-    <div class="bar"><h1>profile</h1></div>
+    <div class="bar"><h1>profile</h1>
+      <span class="contact">
+        <a href="https://github.com/andrewtea" aria-label="github" title="github"><img src="/assets/icons/github.svg" alt="" width="16" height="16"></a>
+        <a href="https://x.com/andrewDotTea" aria-label="twitter" title="twitter"><img src="/assets/icons/twitter.svg" alt="" width="16" height="16"></a>
+        <a href="https://www.linkedin.com/in/andrewtea" aria-label="linkedin" title="linkedin"><img src="/assets/icons/linkedin.svg" alt="" width="16" height="16"></a>
+      </span>
+    </div>
     <div class="body profile">
-      <Postbit />
+      <Postbit contact={false} />
       <div>
         <div class="row">
           <span class="label">building</span>
