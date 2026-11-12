@@ -66,14 +66,14 @@ a:focus-visible { outline: 1px dotted currentColor; outline-offset: 3px; }
 .postbit { display: grid; justify-items: center; gap: 5px; padding-right: 1.25em; border-right: 1px solid var(--line); }
 .avatar {
   display: block;
-  width: 96px; height: 96px;
+  width: 120px; height: 120px;
   padding: 3px;
   border: 1px solid var(--line);
   border-radius: 4px;
   background: #fff;
   box-shadow: 0 1px 2px rgb(60 56 40 / 15%);
 }
-.usertitle { color: var(--theme-ink); font-size: 12px; font-weight: 700; line-height: 1; text-shadow: 0 1px 0 #fff; }
+.usertitle { color: var(--theme-ink); font-size: 14px; font-weight: 700; line-height: 1; text-shadow: 0 1px 0 #fff; }
 .rank { display: block; margin-top: 5px; image-rendering: pixelated; }
 
 /* Shared gel button */
@@ -234,7 +234,7 @@ th.last, td.last { width: 15ch; }
   .row { grid-template-columns: 1fr; gap: 2px; }
   .thread { grid-template-columns: 1fr; }
   .thread .postbit { grid-template-columns: auto auto; grid-template-areas: "avatar title" "avatar rank"; justify-content: start; justify-items: start; column-gap: 10px; padding: 0 0 12px; border-right: 0; border-bottom: 1px solid var(--line); }
-  .thread .avatar { grid-area: avatar; width: 56px; height: 56px; padding: 2px; }
+  .thread .avatar { grid-area: avatar; width: 64px; height: 64px; padding: 2px; }
   .thread .usertitle { grid-area: title; align-self: end; }
   .thread .rank { grid-area: rank; align-self: start; }
   .label { text-align: left; }
