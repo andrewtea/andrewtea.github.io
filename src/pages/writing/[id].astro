@@ -6,7 +6,7 @@ import Postbit from "../../components/Postbit.astro";
 import { postDate } from "../../format";
 
 export async function getStaticPaths() {
-  return (await getCollection("writing")).map((post) => ({ params: { id: post.id }, props: { post } }));
+  return (await getCollection("writing", ({ data }) => import.meta.env.DEV || !data.draft)).map((post) => ({ params: { id: post.id }, props: { post } }));
 }
 
 const { post } = Astro.props;

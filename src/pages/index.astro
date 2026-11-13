@@ -5,7 +5,7 @@ import Forum from "../layouts/Forum.astro";
 import Postbit from "../components/Postbit.astro";
 import { postDate } from "../format";
 
-const posts = (await getCollection("writing")).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const posts = (await getCollection("writing", ({ data }) => import.meta.env.DEV || !data.draft)).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 <Forum title="andrew" description="andrew — building voluma, prev epic.">
   <section class="panel me">
