@@ -211,6 +211,8 @@ th.last, td.last { width: 15ch; }
 .post { max-width: 72ch; }
 .post > :first-child { margin-top: 0; }
 .post h2, .post h3 { margin: 1.4em 0 .4em; font: inherit; font-weight: 700; color: var(--theme-ink); }
+/* Each section starts below a dotted rule, like the separators between blocks in a forum post */
+.post h2 { margin-top: 1.6em; padding-top: 1em; border-top: 1px dotted var(--line); }
 .post p, .post ul, .post ol, .post blockquote, .post pre { margin: 0 0 1em; }
 .post a { color: var(--theme-ink); }
 /* Photos in a post shrink to fit the column and sit in the same white frame as the avatar */
