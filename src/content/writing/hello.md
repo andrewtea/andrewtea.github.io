@@ -17,19 +17,25 @@ Outside of building software, I love hiking, trail running, road cycling, liftin
 
 ## a brief history of andrew
 
-I'm still pretty shocked that I ended up in this field. I certainly was not a kid who grew up tinkering with computers and programming at the age of 8. I do think there are a few factors that contributed to this, though. For starters, both of my parents are in tech. Second, I grew up online and playing tons of video games, which may have had some impact. And lastly, I was born in San Jose, which may have injected some sleeper Silicon Valley gene into my DNA.
+I'm still pretty shocked that I ended up in this field. I certainly was not a kid who grew up tinkering with computers and programming at the age of 8. I do think there are a few factors that contributed to this, though.
 
-I vividly remember taking AP Computer Science A in my junior year of high school and doing terribly. It was my first B ever, I think. Nonetheless, I pressed onwards and applied to CS programs for university. By some miracle, I got accepted into CS at UCSD where I would spend the next 4 years.
+For starters, both of my parents are in tech. Second, I grew up online and playing tons of video games, which may have had some impact. And lastly, I was born in San Jose, which may have injected some sleeper Silicon Valley gene into my DNA.
 
-My time at UCSD was fragmented by COVID, but I did my best to make the most of it. I met a lot of great friends, got popular on TikTok, and interned at Intel, where I worked on internal tooling for the graphics compiler team.
+I vividly remember taking AP Computer Science A in my junior year of high school and doing terribly. It was my first B ever, I think.
 
-After graduating in 2023, I moved to Madison, Wisconsin, where I spent 3 years at Epic Systems building clinical AI to help clinicians measure wounds. This project was one of Epic's flagship image AI features and is now live at over 20 healthcare systems across the US.
+Nonetheless, I pressed onwards and applied to CS programs for university. By some miracle, I got accepted into CS at UCSD where I would spend the next 4 years.
+
+My time at UCSD was fragmented by COVID, but I did my best to make the most of it. I met a lot of great friends, got popular on <a class="person" target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@medd.i">TikTok</a>, and interned at <a class="person" target="_blank" rel="noopener noreferrer" href="https://www.intel.com/">Intel</a>, where I worked on internal tooling for the graphics compiler team.
+
+After graduating in 2023, I moved to Madison, Wisconsin, where I spent 3 years at <a class="person" target="_blank" rel="noopener noreferrer" href="https://www.epic.com/">Epic Systems</a> building clinical AI to help clinicians measure wounds. This project was one of Epic's flagship image AI features and is now live at over 20 healthcare systems across the US.
 
 I left Epic in October 2026 and moved to San Francisco, where I live with my girlfriend and our two kittens!
 
 ## what's andrew doing now?
 
-I met a good friend named Jimmy from my hiring class at Epic. He came to me with the idea of building software for life science researchers. They spend a lot of their time wrestling with legacy software, so we wanted to give them back their time to actually do the scientific work that they're best at. Thus, <a class="person" target="_blank" rel="noopener noreferrer" href="https://voluma.bio/">Voluma</a> was born.
+I met a good friend named Jimmy from my hiring class at Epic. He came to me with the idea of building software for life science researchers.
+
+They spend a lot of their time wrestling with legacy software, so we wanted to give them back their time to actually do the scientific work that they're best at. Thus, <a class="person" target="_blank" rel="noopener noreferrer" href="https://voluma.bio/">Voluma</a> was born.
 
 Voluma is accelerating preclinical efficacy studies for drug development. It's a platform where researchers can coordinate agents to run fully autonomous analysis workflows on their data. We have an initial focus on 3D medical imaging data, such as CT, micro-CT, and MRI, but we plan to expand to any type of computationally heavy analysis.
 
